@@ -1,5 +1,5 @@
 <template>
-  <div class="slice-uploader">
+  <div class="v-slice-uploader">
     <input
       type="file"
       :name="name"
@@ -13,29 +13,29 @@
 </template>
 
 <script>
-import upload from "/src/utils/upload";
+import upload from '../utils/upload';
 
 const NOOP = function() {};
 const EACH_SIZE = 1024 * 2;
 
 export default {
-  name: "uploader",
+  name: 'v-slice-uploader',
   props: {
     name: {
       type: String,
-      default: ""
+      default: ''
     },
     id: {
       type: String,
-      default: ""
+      default: ''
     },
     accept: {
       type: String,
-      default: ""
+      default: ''
     },
     capture: {
       type: String,
-      default: ""
+      default: ''
     },
     disabled: {
       type: Boolean,
@@ -43,9 +43,13 @@ export default {
     },
     action: {
       type: String,
-      default: ""
+      default: ''
     },
     unique: {
+      type: Boolean,
+      default: false
+    },
+    autoUpload: {
       type: Boolean,
       default: false
     },
@@ -104,6 +108,7 @@ export default {
       const [file] = e.target.files;
       this.file = file;
       this.onChange(file);
+      if (this.autoUpload) this.submit();
     },
     submit() {
       upload({
@@ -123,9 +128,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.slice-uploader {
-  background: #ffff;
-}
-</style>

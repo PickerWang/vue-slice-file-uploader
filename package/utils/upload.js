@@ -1,5 +1,5 @@
-import SparkMD5 from "spark-md5";
-import axios from "axios";
+import SparkMD5 from 'spark-md5';
+import axios from 'axios';
 
 const blobSlice =
   File.prototype.mozSlice || File.prototype.webkitSlice || File.prototype.slice;
@@ -16,7 +16,7 @@ function _slice(file, chunkSize) {
 function _hash(file, chunks) {
   const fileReader = new FileReader();
   const spark = new SparkMD5();
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     let current = 0;
     _read();
     fileReader.onload = e => {
@@ -39,8 +39,8 @@ function _hash(file, chunks) {
 }
 
 const errMsg = {
-  NO_FILE: "no file or file type is wrong",
-  NO_ACTION: "no action"
+  NO_FILE: 'no file or file type is wrong',
+  NO_ACTION: 'no action'
 };
 
 export default async function upload({
@@ -57,7 +57,7 @@ export default async function upload({
   onError
 }) {
   const type = Object.prototype.toString.call(file);
-  if (type === "[object File]" || type === "[object Blob]") {
+  if (type === '[object File]' || type === '[object Blob]') {
     const chunks = _slice(file, chunkSize);
     const hash = unique ? await _hash(file, chunks) : null;
     let dataList = chunks.map((chunk, index) => {
@@ -78,7 +78,7 @@ export default async function upload({
       return onCancel(file);
     } else {
       if (!action) return onError(Error(errMsg.NO_ACTION));
-      if (Object.prototype.toString.call(before) === "[object Array]")
+      if (Object.prototype.toString.call(before) === '[object Array]')
         dataList = before;
       const queue = dataList.map(d => {
         const formData = new FormData();

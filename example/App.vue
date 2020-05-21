@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <uploader
+    <slice-uploader
       ref="uploader"
-      action="localhost:8080/upload"
-      :data="{name: 'wang', index: 1}"
+      :action="action"
       :on-change="onChange"
       :before-upload="beforeUpload"
       :on-error="onError"
-      :request="request"
       :unique="true"
     />
+    <button @click="handleUpload">开始上传</button>
   </div>
 </template>
 
 <script>
-import uploader from "./components/uploader.vue";
 
 export default {
-  components: {
-    uploader
+  computed: {
+    action() {
+      return `${location.origin}/upload`
+    }
   },
   methods: {
     onChange(file) {
       console.log(file);
+    },
+    handleUpload() {
       this.$refs.uploader.submit();
     },
     beforeUpload(file, dataList) {
@@ -32,9 +34,6 @@ export default {
     onError(e) {
       console.log(e.message);
     },
-    request(file, dataList) {
-      console.log(dataList);
-    }
   }
 };
 </script>
