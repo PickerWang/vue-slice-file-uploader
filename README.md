@@ -11,16 +11,16 @@
 # Installation
 
 ```
-npm install --save v-slice-uploader
+npm install --save vue-slice-file-uploader
 ```
 
 ## import
 
 ```javascript
 import Vue from 'vue'
-import VSliceUploader from 'v-slice-uploader'
+import VueSliceFileUploader from 'vue-slice-file-uploader'
 
-Vue.use(VSliceUploader)
+Vue.use(VueSliceFileUploader)
 ```
 
 # Documents
