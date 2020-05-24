@@ -1,4 +1,4 @@
-# v-slice-uploader
+# vue-slice-file-uploader
 
 [![Build Status](https://travis-ci.com/PickerWang/v-slice-uploader.svg?branch=master)](https://travis-ci.com/PickerWang/v-slice-uploader)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
