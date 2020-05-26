@@ -39,7 +39,7 @@ Vue.use(VueSliceFileUploader)
 |:headers|Object|{}|headers of the slice upload request|
 |:data|Object|{}|extra info of the slice upload request|
 |:on-change|Function|(file) => {}|change callback of the file upload button|
-|:before-upload|Function|(file, chunkList) => false|return false => stop upload, return true => start upload, return a chunkList => format the payload of slice upload request and start upload |
+|:before-upload|Function|(file, chunkList) => true|return false => stop upload, return true => start upload, return a chunkList => format the payload of slice upload request and start upload |
 |:request|Function|(file, chunkList) => {}|customize slice upload request, will cover the default action|
 |:on-cancel|Function|(file) => {}|cancel callback of slice upload|
 |:on-success|Function|(file) => {}|success callback of slice upload|
