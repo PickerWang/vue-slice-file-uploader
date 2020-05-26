@@ -1,7 +1,7 @@
 # vue-slice-file-uploader
 
 
-[![npm1.0.7](https://img.shields.io/badge/npm-1.0.7-red.svg)](https://www.npmjs.com/package/vue-slice-file-uploader)
+[![npm1.0.8](https://img.shields.io/badge/npm-1.0.7-red.svg)](https://www.npmjs.com/package/vue-slice-file-uploader)
 [![Build Status](https://travis-ci.com/PickerWang/vue-slice-file-uploader.svg?branch=master)](https://travis-ci.com/PickerWang/vue-slice-file-uploader)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
