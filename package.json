@@ -23,7 +23,7 @@
     "url": "git@github.com:PickerWang/vue-slice-file-uploader.git"
   },
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "spark-md5": "3.0.1"
   },
   "devDependencies": {
